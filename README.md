@@ -1,9 +1,6 @@
 # Clase 1
 ## Introdución a Microservicios
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travorg/joemccann/dillinger.svg?branch=master)is-ci.](https://travis-ci.org/joemccann/dillinger)
 
 #### Software a Instalar:
 - [Visual Studio Code](https://code.visualstudio.com/Download)
@@ -20,7 +17,7 @@
 # Ejecutaren WSL2:
 docker run hello-world
 ```
-- [microl8s](https://microk8s.io/docs/getting-started) 
+- [microk8s](https://microk8s.io/docs/getting-started) 
 - [kubectl](https://microk8s.io/docs/getting-started)
 - [HELM](https://helm.sh/docs/intro/install/#from-apt-debianubuntu)
 - [terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
@@ -31,7 +28,8 @@ docker run hello-world
 ### Abrir una cuenta en
 - [DockerHub](https://hub.docker.com/)
 - [GitHub](https://github.com)
-- [GitLab](
+- [GitLab](https://gitlab.com/users/sign_up)
+- [Azure DevOps](https://azure.microsoft.com/en-us/products/devops/)
 - [Amazon Web Services - AWS](https://aws.amazon.com/es/?nc1=h_ls)
 - [Microsoft Azure](https://portal.azure.com/#home)
 
@@ -39,6 +37,7 @@ docker run hello-world
 https://github.com/AcademiaUbuntu-DevOps 
 
 ### Practcar comandos básicos de Linux
+```sh
 man
 cd
 cd..
@@ -53,13 +52,21 @@ history
 cat
 vim
 top
+```
 
 #### Enviarnos la versión de cada software recien instalado en WSL2
+```sh
 docker --version
 microk8s --version 
 etc...
-
+```
 
 > La palabra Ubuntu viene a significar algo así como 
 > "soy porque tú eres. Eres porque somos"
+
+https://www.linkedin.com/company/ubuntuacademia
+
+https://www.instagram.com/ubuntu.consultores/ 
+
+
 
