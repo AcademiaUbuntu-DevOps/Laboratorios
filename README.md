@@ -43,15 +43,21 @@ cd
 cd..
 ls
 ll
-touch
-rm
-cp
-mv
+touch miarchivo.txt
+echo "hola Linux" > miarchivo.txt
+cat miarchivo.txt
+cp miarchivo.txt rm COPIAmiarchivo.txt
+mv miarchivo.txt nuevoNombre.txt
+rm nuevoNombre.txt
 clear
 history
-cat
-vim
+cat 
+vim # se sale con "ESC" :wq
 top
+apt update  #  Revisar si hay actualizaciones disponibles
+apt upgrade  # Actualizar el sistema operativo 
+apt install apache2   -y     # Instalamos el servidor HTTP
+exit # salir del terminal 
 ```
 
 #### Enviarnos la versión de cada software recien instalado en WSL2
