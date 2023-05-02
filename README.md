@@ -1,8 +1,8 @@
-# Clase 1
+# Laboratorio de la Clase 1
 ## Introdución a Microservicios
 
 
-#### Software a Instalar:
+#### Instalar las siguientes aplicaciones en tu Sistema Operativo, nótese algunos como WSL no son necesario si ya usas Linux:
 - [Visual Studio Code](https://code.visualstudio.com/Download)
 - [GitHub Desktop](https://desktop.github.com/)
 - [WSL: Windows Subsystem for Linux](https://learn.microsoft.com/es-es/windows/wsl/install)
@@ -11,7 +11,7 @@
 - [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701)
 
 
-#### Dentro de Ubuntu (WSL2)
+#### Dentro de Windows Subsystem for Linux (WSL2) debes instalar las siguientes aplicaciónes:
 - [Docker](https://docs.docker.com/engine/install/ubuntu/)
 ```sh
 # Ejecutaren WSL2:
@@ -24,6 +24,7 @@ docker run hello-world
 - [pip3](https://pip.pypa.io/en/stable/installation/#ensurepip)
 - [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
+##### Es recomendable revisar la página oficial de cada software para saber qué se está instalando y qué problema resuelve cada app.
 
 ### Abrir una cuenta en
 - [DockerHub](https://hub.docker.com/)
@@ -60,7 +61,7 @@ apt install apache2   -y     # Instalamos el servidor HTTP
 exit # salir del terminal 
 ```
 
-#### Enviarnos la versión de cada software recien instalado en WSL2
+#### Enviarnos la versión de cada software recien instalado en WSL2 a ubuntu.coachesconsultores@gmail.com 
 ```sh
 docker --version
 microk8s --version 
@@ -69,6 +70,7 @@ etc...
 
 > La palabra Ubuntu viene a significar algo así como 
 > "soy porque tú eres. Eres porque somos"
+
 
 https://www.linkedin.com/company/ubuntuacademia
 
