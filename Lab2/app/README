@@ -1,0 +1,37 @@
+#Practica Docker
+
+1- crear la imagen con el comando:
+
+    docker build -t nombre-contenedor .
+
+2- levantar el contenedor local:
+ 
+   docker run -p 3000:3000 nombre-contenedor 
+
+3 - ingresamos en el navegador a :
+    localhost:3000
+ probamos.
+
+  - Ahora  ejecutamos  "docker ps" buscamos el contenedor que levantamos 
+  ejecutamos "docker stop contenedor "
+
+  - luego docker run -p 3000:3000 nombre-contenedor  
+
+  - Qué observamos? tomamos nota.
+
+  - Ahora  ejecutamos  "docker ps" buscamos el contenedor que levantamos 
+  ejecutamos "docker stop contenedor "
+
+4 - ahora ejecutamos pwd en la consola , y copiamos el resultado y lo colocamos de la siguiente manera:
+    - docker run -d -v (resultado-del-pwd)/etc:/etc/todos -p 3000:3000 nombre-contenedor
+    - ingresamos al navegador colocamos "localhost:3000" agregamos items.
+    - Ahora  ejecutamos  "docker ps" buscamos el contenedor que levantamos 
+      ejecutamos "docker stop id-contenedor "
+    - ejecutamos nuevamente docker run -d -v (resultado-del-pwd)/etc:/etc/todos -p 3000:3000 nombre-contenedor
+    - Qué observamos? tomamos nota.
+
+ 
+
+
+
+
