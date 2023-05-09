@@ -9,6 +9,11 @@
 - [Minikube](https://minikube.sigs.k8s.io/docs/)
 - [KubeApps](https://bitnami.com/kubernetes/kubeapps)
 - [Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+- [ArgoCD](https://argoproj.github.io/cd/)
+- [FluxCD](https://fluxcd.io/)
+- [Rancher (RKE/RKE2)](https://www.rancher.com/)
+
+#### Diferentes nubes públicas ofrecen el mismo servicio, no te cases con una nube.
 - [Azure Kubernetes Service](https://learn.microsoft.com/es-es/azure/aks/intro-kubernetes)
 - [AWS Elastic Kubernetes Service](https://aws.amazon.com/es/eks/)
 - [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine?hl=es)
