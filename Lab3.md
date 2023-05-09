@@ -23,7 +23,7 @@
 
 ### TAREA / ENTREGABLE
 El contenedor que subiste a DockerHub en le laboratorio anterior, pásalo a tu clúster local de Kubernetes con un Deployment, 
-exporta el servicio con port-forwarding, y accede desde tu axplorador
+exporta el servicio con port-forwarding, y accede desde tu explorador.
 
 El Dockerfile y el código YAML que usaste para crear el Deployment debes exponerlo en tu GitHub 
 y compartir la URL de tu repositorio GitHub en el grupo de Télegram Comunidad Ubuntu.
