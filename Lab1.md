@@ -69,12 +69,9 @@ etc...
 ```
 
 > La palabra Ubuntu viene a significar algo así como 
-> "soy porque tú eres. Eres porque somos"
+> "Soy porque tú eres, eres porque somos"
 
 
-https://www.linkedin.com/company/ubuntuacademia
+[LinkedIn](https://www.linkedin.com/company/ubuntuacademia)
 
-https://www.instagram.com/ubuntu.consultores/ 
-
-
-
+[Instagram](https://www.instagram.com/ubuntu.consultores/) 
