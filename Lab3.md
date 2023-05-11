@@ -32,7 +32,7 @@ exporta el servicio con [kubectl port-forward](https://kubernetes.io/docs/tasks/
 El Dockerfile y el código YAML que usaste para crear el Deployment debes exponerlo en tu GitHub 
 y compartir la URL de tu repositorio GitHub en el grupo de Télegram Comunidad Ubuntu.
 
-### Para la próxima clase
+#### Para la próxima clase
 - [HELM Charts](https://helm.sh/)
 - [ArgoCD](https://argoproj.github.io/cd/)
 - [FluxCD](https://fluxcd.io/)
