@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab3jmg
+  labels:
+    app: lab3jmg
+spec:
+  selector:
+    matchLabels:
+      app: lab3jmg
+  replicas: 3
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: lab3jmg
+    spec:
+      containers:
+        - name: lab3jmg
+          image: jmg84/jmginx:latest
+          ports:
+            - name: port1
+              containerPort: 90
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lab3jmg-service
+  namespace: default
+spec:
+  selector:
+    app: lab3jmg
+  type: NodePort
+  ports:
+    - port: 90
+      nodePort: 32000
+      targetPort: 90
