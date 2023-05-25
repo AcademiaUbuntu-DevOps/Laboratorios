@@ -17,4 +17,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: cd App/Pablo  && docker build . --file Dockerfile --tag PabloApp:$(date +%s)
+      run: cd App/Pablo  && docker build . --file Dockerfile --tag pabloapp:$(date +%s)
