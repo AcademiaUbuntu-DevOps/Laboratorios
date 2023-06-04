@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ice-cream-web-v2-svc
+spec:
+  selector:
+    app: ice-cream-web
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 80

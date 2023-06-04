@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: cake-shop-web-v1-svc
+spec:
+  selector:
+    app: cake-shop-web
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 80

@@ -1,24 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-v1
-  namespace: hola-mundo
+  name: cake-shop-web
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: hello-v1
+      app: cake-shop-web
   template:
     metadata:
       labels:
-        app: hello-v1
+        app: cake-shop-web
     spec:
       containers:
-      - name: hello
-        image: gcr.io/google-samples/hello-app:1.0
+      - name: cake-shop-web
+        image: ilvingr/cake-shop-web:cake-shop-web-iv
         imagePullPolicy: IfNotPresent        
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         resources:
           requests:
             memory: "64Mi"
