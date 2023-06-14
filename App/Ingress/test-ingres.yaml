@@ -1,0 +1,143 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cake-shop-web
+  labels:
+    app: cake-shop
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+       app: cake-shop
+  template:
+    metadata:
+       labels:
+         app: cake-shop
+    spec:
+      containers:
+      - name: cake-shop-web
+        image: tyrantred/cake-shop-web
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cake-shop-web
+  labels:
+    app: cake-shop
+spec:
+  type: ClusterIP 
+  selector:
+    app: cake-shop
+  ports:
+    - protocol: TCP
+      port: 8010
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ice-cream-web
+  labels:
+    app: ice-cream
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+       app: ice-cream
+  template:
+    metadata:
+       labels:
+         app: ice-cream
+    spec:
+      containers:
+      - name: ice-cream-web
+        image: tyrantred/ice-cream-web
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ice-cream-web
+  labels:
+    app: ice-cream
+spec:
+  type: ClusterIP 
+  selector:
+    app: ice-cream
+  ports:
+    - protocol: TCP
+      port: 8020
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gaming-web
+  labels:
+    app: gaming
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+       app: gaming
+  template:
+    metadata:
+       labels:
+         app: gaming
+    spec:
+      containers:
+      - name: gaming-web
+        image: tyrantred/gaming-web
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gaming-web
+  labels:
+    app: gaming
+spec:
+  type: ClusterIP 
+  selector:
+    app: gaming
+  ports:
+    - protocol: TCP
+      port: 8030
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-frontend-webs
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx-example
+  rules:
+  - http:
+      paths:
+      - path: /cake
+        pathType: Prefix
+        backend:
+          service:
+            name: cake-shop-web 
+            port:
+              number: 8010
+      - path: /icecream
+        pathType: Prefix
+        backend:
+          service:
+            name: ice-cream-web
+            port:
+              number: 8020
+      - path: /gaming
+        pathType: Prefix
+        backend:
+          service:
+            name: gaming-web
+            port:
+              number: 8030

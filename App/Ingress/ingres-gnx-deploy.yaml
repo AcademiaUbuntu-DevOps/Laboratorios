@@ -1,3 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginx-ingress 
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: nginx-ingress 
+  namespace: nginx-ingress
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,6 +32,8 @@ spec:
         ports:
         - name: http
           containerPort: 80
+        - name: https
+          containerPort: 443
         env:
         - name: POD_NAMESPACE
           valueFrom:
@@ -38,3 +51,28 @@ spec:
          #- -report-ingress-status
          #- -external-service=nginx-ingress
          #- -enable-leader-election
+---
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: nginx
+  # annotations:
+  #   ingressclass.kubernetes.io/is-default-class: "true"
+spec:
+  controller: nginx.org/ingress-controller
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-ingress
+  namespace: nginx-ingress
+spec:
+  type: NodePort 
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30000
+    protocol: TCP
+    name: http
+  selector:
+    app: nginx-ingress

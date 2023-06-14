@@ -1,24 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-v2
-  namespace: hola-mundo
+  name: ice-cream-web
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: hello-v2
+      app: ice-cream-web
   template:
     metadata:
       labels:
-        app: hello-v2
+        app: ice-cream-web
     spec:
       containers:
-      - name: hello
-        image: gcr.io/google-samples/hello-app:2.0
+      - name: ice-cream-web
+        image: ilvingr/ice-cream-web:ice-cream-web-iv
         imagePullPolicy: IfNotPresent        
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         resources:
           requests:
             memory: "64Mi"
