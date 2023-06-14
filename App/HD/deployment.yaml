@@ -16,7 +16,7 @@ spec:
       - name: mi-contenedor
         image: achedehd/ubuntu_con_apache
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -28,6 +28,6 @@ spec:
     app: mi-aplicacion
   type: NodePort
   ports:
-    - port: 8080
+    - port: 80
       nodePort: 32001
-      targetPort: 8080
+      targetPort: 80
