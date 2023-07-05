@@ -37,8 +37,12 @@ helm repo add bitnami https://github.com/bitnami/charts.git
 helm repo update
 
 # Crear un Persistent Volume "PV" para Jenkins, de 1GB.
+# el archivo está en argocd/jenkins-pv.yaml
+kubectl apply -f jenkins-pv.yaml
 
 # Crear un Persistent Volume Claim "PVC" para Jenkins, de 1GB.
+# el archivo está en argocd/jenkins-pvc.yaml
+kubectl apply -f jenkins-pvc.yaml
 
 # Instalar JENKINS en ArgoCD
  argocd app create jenkins \
