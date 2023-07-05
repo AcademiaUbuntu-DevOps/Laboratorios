@@ -38,6 +38,7 @@ helm repo update
 
 # Crear un Persistent Volume "PV" para Jenkins, de 1GB.
 # el archivo está en argocd/jenkins-pv.yaml
+mkdir -p /var/lib/microk8s-pv/jenkins
 kubectl apply -f jenkins-pv.yaml
 
 # Crear un Persistent Volume Claim "PVC" para Jenkins, de 1GB.
