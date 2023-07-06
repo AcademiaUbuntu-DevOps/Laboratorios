@@ -54,6 +54,13 @@ kubectl apply -f jenkins-pvc.yaml
    --values-literal-file jenkins_values.yaml \
    --upsert --revision 12.2.3
 
+# La contraseña de jenkins está en el secret, que se puede revelar en LENS, o en el mismo ArgoCD.
+Usiario: user
+
+# si no funciona, daerror al instalar porque no encuentra el repositorio, es posible que tengas que reiniciar el clúster de microk8s
+microk8s stop
+microk8s start
+
 ```
 
   Abrir la siguiente URL en tu explorador
