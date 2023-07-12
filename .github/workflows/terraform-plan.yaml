@@ -34,4 +34,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           require-comment: true
-          requested-reviewers: chris@me.com
+          requested-reviewers: ubuntu.coachesconsultores@gmail.com
