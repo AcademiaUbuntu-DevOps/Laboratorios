@@ -39,11 +39,13 @@ helm repo update
 # Crear un Persistent Volume "PV" para Jenkins, de 1GB.
 # el archivo está en argocd/jenkins-pv.yaml
 mkdir -p /var/lib/microk8s-pv/jenkins
-kubectl apply -f jenkins-pv.yaml
+cd /var/lib/microk8s-pv/
+chmod 777 jenkins
+kubectl apply -f jenkins-pv.yaml # no ncesita namespace
 
 # Crear un Persistent Volume Claim "PVC" para Jenkins, de 1GB.
 # el archivo está en argocd/jenkins-pvc.yaml
-kubectl apply -f jenkins-pvc.yaml
+kubectl apply -f jenkins-pvc.yaml # el namespace está definido dentro del archivo
 
 # Instalar JENKINS en ArgoCD
  argocd app create jenkins \
@@ -56,6 +58,9 @@ kubectl apply -f jenkins-pvc.yaml
 
 # La contraseña de jenkins está en el secret, que se puede revelar en LENS, o en el mismo ArgoCD.
 Usiario: user
+
+# copiar password de JENKINS y respaldarla
+kubectl -n jenkins get secret jenkins -o jsonpath="{.data.jenkins-password}" | base64 -d
 
 # si no funciona, daerror al instalar porque no encuentra el repositorio, es posible que tengas que reiniciar el clúster de microk8s
 microk8s stop
