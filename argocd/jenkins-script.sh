@@ -1,9 +1,3 @@
-# Iniciar Microk8s
-microk8s start
-
-# Habilitar el Addon de ArgoCD en microk8s
-# microk8s enable argocd [ DEPRECADO ] 
-
 # Agregar el repositorio de bitnami a HELM
 helm repo add bitnami https://github.com/bitnami/charts.git
 
@@ -57,11 +51,8 @@ kubectl apply -f jenkins-pvc.yaml # el namespace está definido dentro del archi
    --upsert --revision 12.2.3
 
 # La contraseña de jenkins está en el secret, que se puede revelar en LENS, o en el mismo ArgoCD.
-# Usiario: user
 
 # copiar password de JENKINS y respaldarla
-# kubectl -n jenkins get secret jenkins -o jsonpath="{.data.jenkins-password}" | base64 -d
-
-# si no funciona, daerror al instalar porque no encuentra el repositorio, es posible que tengas que reiniciar el clúster de microk8s
-# microk8s stop
-# microk8s start
+kubectl -n jenkins get secret jenkins -o jsonpath="{.data.jenkins-password}" | base64 -d tee jenkins_password.txt
+echo "Usuario: user"
+cat jenkins_password.txt
