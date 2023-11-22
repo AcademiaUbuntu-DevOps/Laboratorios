@@ -1,15 +1,15 @@
-# Da un error si no eres root
-whoami | grep root || echo "¡¡TU NO TIENES PODER AQUI!!, te faltó el \"sudo\""
- 
-# Crear namespace "jenkins" en el cluster local de microk8s.
-kubectl create ns jenkins
+# ERROR si eres root
+whoami | grep root && echo "No corras este script con \"sudo\" ni con el usuario root"  && exit 1
+
+# ERROR si no sirve kubectl
+kubectl version | grep -q 'Server Version' || { echo "kubectl no está funcionando, mijo!"; exit 1; }
+
+# Crear namespace "jenkins" en el cluster.
+# kubectl create ns jenkins
 
 # Crear un Persistent Volume "PV" para Jenkins, de 1GB.
 # el archivo está en argocd/jenkins-pv.yaml
-mkdir -p /var/lib/microk8s-pv/jenkins
-
-#parmisos totales al PATH jenkins, (sólo por tratarse de un laboratorio)
-chmod 777 /var/lib/microk8s-pv/jenkins
+mkdir -p ~/kubernetes/jenkins
 
 # Crear el volumen persistente
 kubectl apply -f jenkins-pv.yaml # no ncesita namespace
