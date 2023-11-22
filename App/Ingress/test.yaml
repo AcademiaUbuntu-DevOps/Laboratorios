@@ -1,0 +1,24 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: cake-shop-ejemplo2-svc
+spec:
+  selector:
+    app: cake-shop-web
+  ports:
+  - protocol: TCP
+    port: 8001
+    targetPort: 80
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ice-cream-ejemplo2-svc
+spec:
+  selector:
+    app: ice-cream-web
+  ports:
+  - protocol: TCP
+    port: 8001
+    targetPort: 80

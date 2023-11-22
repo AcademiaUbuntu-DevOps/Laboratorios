@@ -1,27 +1,24 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: ingress-test
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    # kubernetes.io/ingress.class: nginx
 spec:
   ingressClassName: nginx
   rules:
-  - host: v1.cake-shop-web.local
+  - host: v1.ejemplo2.local
     http:
       paths:
-      - path: /
+      - path: /cake
         pathType: Prefix
         backend:
           service:
             name: cake-shop-web-v1-svc
             port:
               number: 8080
-        
-  - host: v2.ice-cream-web.local 
-    http:
-      paths:
-      - path: /
+      - path: /icecream
         pathType: Prefix
         backend:
           service:
