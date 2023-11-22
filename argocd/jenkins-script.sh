@@ -1,3 +1,9 @@
+# Script para instalar ArgoCD y luego Jenkins dentro de ArgoCD
+
+# Da un error si no eres root
+whoami | grep root || echo "No eres root, te faltó el \"sudo\""
+
+
 # Agregar el repositorio de bitnami a HELM
 helm repo add bitnami https://github.com/bitnami/charts.git
 
