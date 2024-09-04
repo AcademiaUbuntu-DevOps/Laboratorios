@@ -8,4 +8,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /var/lib/microk8s-pv/jenkins
+    path: ~/kubernetes/jenkins
