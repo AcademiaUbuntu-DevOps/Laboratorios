@@ -7,16 +7,27 @@
 
 ```sh
 # Iniciar Microk8s
-microk8s start
+  microk8s start
+
+# Habilitar los repositorios de la comunidad:
+  # Evitar el error "fatal: detected dubious ownership in repository | fatal: Could not read from remote repository."
+  git config --global --add safe.directory /snap/microk8s/current/addons/community/.git
+  microk8s enable community
+
+# Borrar "Custom Resource Definitions" (CDRs) obsoletos
+microk8s kubectl delete crd applications.argoproj.io appprojects.argoproj.io \
+  argocdapplicationsets.argoproj.io argocdrollouts.argoproj.io applicationsets.argoproj.io
+
+
 
 # Habilitar el Addon de ArgoCD en microk8s
-microk8s enable argocd
+  microk8s enable argocd
 
 # copiar password de ArgoCD y respaldarla
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
 # Hacer port-forward para poder tener acceso a ArgoCD desde Localhost
-kubectl port-forward service/argo-cd-argocd-server -n argocd 8080:443
+  kubectl port-forward service/argo-cd-argocd-server -n argocd 8080:443
 
 # Instalar "arcocd cli"
 curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
